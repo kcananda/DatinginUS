@@ -1,0 +1,27 @@
+<html>
+
+<head>
+	<title> Dating site-- Signup </title>
+
+	<title>Hello from Flask</title>
+
+  <h1>Hello {{ fname }} plz enter the contact detail!</h1>
+
+</head>
+
+<body>
+	
+	<form>
+		<center>
+		First Name :<input type="text",name = "fname">
+		Last Name :<input type="text",name = "lname">
+		Email :<textarea rows="5" cols="20">
+		<input type="submit",value = "login">
+
+		<p><a href={{ url_for('hello_world') }}>Index page</a>
+		<a href={{ url_for('sign') }}>Sign up page</a></p>
+	</center>
+	</form>
+</body>
+
+</html>
