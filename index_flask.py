@@ -2,6 +2,7 @@
 
 
 from flask import Flask
+from flask import request
 from flask import url_for
 from flask import render_template
 app = Flask(__name__)
@@ -13,15 +14,15 @@ def hello_world():
 
 @app.route('/signup')
 def sign():
-#	return "uname %s " % uname
    return render_template("signup.html")
 
-@app.route('/contact/<name>')
-def contactus(name):
-    #return 'welcome to contact page!-- Enter the detail for %s'%name
-   # print url_for(hello_world)
-    return render_template("contact.html", fname=name)
-
+@app.route('/contact',methods=["GET","POST"])
+def contactus():
+	if request.method == 'POST':
+		name = request.form['fname']
+		return render_template("contact.html",fname=name)
+	else:
+		return render_template("contact.html",fname="YOU")
 
 
 if __name__ == '__main__':
