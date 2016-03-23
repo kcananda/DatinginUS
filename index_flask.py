@@ -9,12 +9,12 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
 #	return "hello world"
-   return render_template("hello.html")
+   return render_template("index.html")
 
 @app.route('/signup')
 def sign():
 #	return "uname %s " % uname
-   return render_template("sign.html")
+   return render_template("signup.html")
 
 @app.route('/contact/<name>')
 def contactus(name):
