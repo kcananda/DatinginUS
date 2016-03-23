@@ -19,7 +19,10 @@ def sign():
 @app.route('/contact/<name>')
 def contactus(name):
     #return 'welcome to contact page!-- Enter the detail for %s'%name
+   # print url_for(hello_world)
     return render_template("contact.html", fname=name)
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
